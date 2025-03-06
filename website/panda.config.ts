@@ -2,20 +2,25 @@ import { defineConfig } from '@pandacss/dev'
 import { createPreset } from '@park-ui/panda-preset'
 import amber from '@park-ui/panda-preset/colors/amber'
 import blue from '@park-ui/panda-preset/colors/blue'
+import brand from '@park-ui/panda-preset/colors/brand'
 import bronze from '@park-ui/panda-preset/colors/bronze'
 import brown from '@park-ui/panda-preset/colors/brown'
 import crimson from '@park-ui/panda-preset/colors/crimson'
 import cyan from '@park-ui/panda-preset/colors/cyan'
+import error from '@park-ui/panda-preset/colors/error'
 import gold from '@park-ui/panda-preset/colors/gold'
 import grass from '@park-ui/panda-preset/colors/grass'
 import green from '@park-ui/panda-preset/colors/green'
 import indigo from '@park-ui/panda-preset/colors/indigo'
+import information from '@park-ui/panda-preset/colors/information'
 import iris from '@park-ui/panda-preset/colors/iris'
 import jade from '@park-ui/panda-preset/colors/jade'
 import lime from '@park-ui/panda-preset/colors/lime'
 import mauve from '@park-ui/panda-preset/colors/mauve'
 import mint from '@park-ui/panda-preset/colors/mint'
 import neutral from '@park-ui/panda-preset/colors/neutral'
+import neutraldark from '@park-ui/panda-preset/colors/neutraldark'
+import neutrallight from '@park-ui/panda-preset/colors/neutrallight'
 import olive from '@park-ui/panda-preset/colors/olive'
 import orange from '@park-ui/panda-preset/colors/orange'
 import pink from '@park-ui/panda-preset/colors/pink'
@@ -27,9 +32,11 @@ import sage from '@park-ui/panda-preset/colors/sage'
 import sand from '@park-ui/panda-preset/colors/sand'
 import sky from '@park-ui/panda-preset/colors/sky'
 import slate from '@park-ui/panda-preset/colors/slate'
+import success from '@park-ui/panda-preset/colors/success'
 import teal from '@park-ui/panda-preset/colors/teal'
 import tomato from '@park-ui/panda-preset/colors/tomato'
 import violet from '@park-ui/panda-preset/colors/violet'
+import warning from '@park-ui/panda-preset/colors/warning'
 import yellow from '@park-ui/panda-preset/colors/yellow'
 
 import typographyPreset from 'pandacss-preset-typography'
@@ -37,7 +44,7 @@ import typographyPreset from 'pandacss-preset-typography'
 export default defineConfig({
   validation: 'none',
   presets: [
-    createPreset({ accentColor: neutral, grayColor: neutral, radius: 'sm' }),
+    createPreset({ accentColor: neutral, neutrallightColor: neutral, radius: 'sm' }),
     typographyPreset({
       recipe: {
         sizes: ['base'],
@@ -138,6 +145,13 @@ export default defineConfig({
       tokens: {
         colors: {
           amber: amber.tokens,
+          neutrallight: neutrallight.tokens,
+          neutraldark: neutraldark.tokens,
+          brand: brand.tokens,
+          information: information.tokens,
+          warning: warning.tokens,
+          success: success.tokens,
+          error: error.tokens,
           blue: blue.tokens,
           bronze: bronze.tokens,
           brown: brown.tokens,
@@ -177,6 +191,13 @@ export default defineConfig({
       semanticTokens: {
         colors: {
           amber: amber.semanticTokens,
+          neutrallight: neutrallight.semanticTokens,
+          neutraldark: neutraldark.semanticTokens,
+          brand: brand.semanticTokens,
+          information: information.semanticTokens,
+          warning: warning.semanticTokens,
+          success: success.semanticTokens,
+          error: error.semanticTokens,
           blue: blue.semanticTokens,
           bronze: bronze.semanticTokens,
           brown: brown.semanticTokens,

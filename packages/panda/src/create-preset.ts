@@ -12,10 +12,10 @@ import { tokens } from './theme/tokens'
 import { createRadii } from './utils/create-radii'
 
 export const createPreset = (options: PresetOptions) => {
-  const { accentColor, grayColor, radius } = options
+  const { accentColor, neutrallightColor, radius } = options
 
-  const standardizeGrayTokens = (tokens: SemanticTokens['colors']) =>
-    JSON.parse(JSON.stringify(tokens).replace(new RegExp(grayColor.name, 'g'), 'gray'))
+  const standardizeNeutrallightTokens = (tokens: SemanticTokens['colors']) =>
+    JSON.parse(JSON.stringify(tokens).replace(new RegExp(neutrallightColor.name, 'g'), 'neutral'))
 
   return definePreset({
     name: '@park-ui/panda-preset',
@@ -39,7 +39,7 @@ export const createPreset = (options: PresetOptions) => {
           colors: {
             ...tokens.colors,
             red: red.tokens,
-            gray: grayColor.tokens ?? {},
+            neutrallightColor: neutrallightColor.tokens ?? {},
             [accentColor.name]: accentColor.tokens,
           },
         },
@@ -48,7 +48,7 @@ export const createPreset = (options: PresetOptions) => {
           colors: {
             ...semanticTokens.colors,
             red: red.semanticTokens,
-            gray: standardizeGrayTokens(grayColor.semanticTokens),
+            neutrallight: standardizeNeutrallightTokens(neutrallightColor.semanticTokens),
             [accentColor.name]: accentColor.semanticTokens,
           },
           radii: createRadii(radius),

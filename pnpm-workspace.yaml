@@ -1,0 +1,8 @@
+packages:
+  - components/*
+  - packages/*
+  - scripts
+  - website
+
+onlyBuiltDependencies:
+  - lefthook

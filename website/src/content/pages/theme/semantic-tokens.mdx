@@ -1,17 +1,13 @@
 ---
 id: semantic-tokens
 title: Semantic Tokens
-description: Bring the Park UI semantic to your entire application
+description: Bring the Agni UI semantic to your entire application
 ---
 
 ## Colors
 
-Park UI's theme primarily revolves around one gray and one accent color. These foundational colors are later utilized to
+Agni UI's theme primarily revolves around one gray and one accent color. These foundational colors are later utilized to
 define the `bg` (background), `fg` (foreground), and `accent` tokens.
-
-### Gray
-
-<ColorPalette color="gray" withLegend />
 
 ### Accent
 
@@ -26,9 +22,9 @@ containers, sections, or the entire screen's layout.
 
 | Name       | CSS Variable                  | Token Name      |
 | ---------- | ----------------------------- | --------------- |
-| Canvas     | `var(--colors-bg-canvas)`     | `bg.canvas`     |
-| Default    | `var(--colors-bg-default)`    | `bg.default`    |
-| Subtle     | `var(--colors-bg-subtle)`     | `bg.subtle`     |
+|soft-surface| `var(--colors-brand-bg-soft-surface)` | `bg.brandsoftsurface` |
+| Default    | `var(--colors-brand-bg-default)`    | `brand.bg.default`    |
+| Subtle     | `var(--colors-brand-bg-subtle)`     | `bg.subtle`     |
 | Muted      | `var(--colors-bg-muted)`      | `bg.muted`      |
 | Emphasized | `var(--colors-bg-emphasized)` | `bg.emphasized` |
 | Disabled   | `var(--colors-bg-disabled)`   | `bg.disabled`   |
@@ -38,7 +34,7 @@ In the example below, the `bg.muted` token is used to create a muted background 
 ```tsx
 // live
 <Box bg="bg.muted" p="2">
-  <Text size="sm">Hello from Park UI</Text>
+  <Text size="sm">Hello from Agni UI</Text>
 </Box>
 ```
 
@@ -62,7 +58,7 @@ In the example below, the `fg.muted` token is used to create a muted text color 
 ```tsx
 // live
 <Text color="fg.muted" size="sm">
-  Hello from Park UI
+  Hello from Agni UI
 </Text>
 ```
 
@@ -130,6 +126,6 @@ In the example below, the `l3` token is used to create a rounded corner for the 
 ```tsx
 // live
 <Box borderRadius="l2" borderWidth="1px" p="2">
-  <Text size="sm">Hello from Park UI</Text>
+  <Text size="sm">Hello from Agni UI</Text>
 </Box>
 ```

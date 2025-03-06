@@ -25,7 +25,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     Google,
     GitHub,
     Postmark({
-      from: 'Park UI <noreply@park-ui.com>',
+      from: 'AGNI UI <noreply@park-ui.com>',
     }),
   ],
 })

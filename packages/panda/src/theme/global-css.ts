@@ -2,14 +2,14 @@ import { defineGlobalStyles } from '@pandacss/dev'
 
 export const globalCss = defineGlobalStyles({
   body: {
-    background: 'bg.canvas',
-    color: 'fg.default',
+    background: 'bg.soft-surface',
+    color: 'fg.subtle',
     _dark: {
       colorScheme: 'dark',
     },
   },
   '*, *::before, *::after': {
-    borderColor: 'border.subtle',
+    borderColor: 'default',
     borderStyle: 'solid',
     boxSizing: 'border-box',
   },

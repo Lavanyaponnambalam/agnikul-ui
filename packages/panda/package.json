@@ -1,8 +1,8 @@
 {
   "name": "@park-ui/panda-preset",
   "version": "0.43.1",
-  "description": "Panda CSS Preset for Park UI",
-  "keywords": ["Ark UI", "Panda CSS", "Preset", "Park UI"],
+  "description": "Panda CSS Preset for AGNI UI",
+  "keywords": ["Ark UI", "Panda CSS", "Preset", "AGNI UI"],
   "author": "Christian Schröter <dev@grizzly.codes> (https://cschroeter.net/)",
   "homepage": "https://park-ui.com",
   "license": "MIT",

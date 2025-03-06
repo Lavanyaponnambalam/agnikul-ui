@@ -1,4 +1,4 @@
-import type { AccentColor, ColorPalette, GrayColor, Radius } from '@park-ui/panda-preset'
+import type { AccentColor, ColorPalette, NeutrallightColor, Radius } from '@park-ui/panda-preset'
 import { createVariables } from '@park-ui/panda-preset/utils'
 import { Match } from 'effect'
 import { useEffect } from 'react'
@@ -10,6 +10,13 @@ import { type Font, fonts } from '~/app/fonts'
 const loadColorPalette = async (color: string): Promise<ColorPalette> => {
   const palettes: Record<string, () => Promise<{ default: ColorPalette }>> = {
     amber: () => import('@park-ui/panda-preset/colors/amber'),
+    neutrallight: () => import('@park-ui/panda-preset/colors/neutrallight'),
+    neutraldark: () => import('@park-ui/panda-preset/colors/neutraldark'),
+    brand: () => import('@park-ui/panda-preset/colors/brand'),
+    information: () => import('@park-ui/panda-preset/colors/information'),
+    warning: () => import('@park-ui/panda-preset/colors/warning'),
+    success: () => import('@park-ui/panda-preset/colors/success'),
+    error: () => import('@park-ui/panda-preset/colors/error'),
     blue: () => import('@park-ui/panda-preset/colors/blue'),
     bronze: () => import('@park-ui/panda-preset/colors/bronze'),
     brown: () => import('@park-ui/panda-preset/colors/brown'),
@@ -53,12 +60,12 @@ const loadColorPalette = async (color: string): Promise<ColorPalette> => {
 
 export const useTheme = () => {
   const accentColor = useThemeStore((state) => state.accentColor)
-  const grayColor = useThemeStore((state) => state.grayColor)
+  const neutrallightColor = useThemeStore((state) => state.neutrallightColor)
   const font = useThemeStore((state) => state.font)
   const radius = useThemeStore((state) => state.radius)
 
   const setAccentColor = useThemeStore((state) => state.setAccentColor)
-  const setGrayColor = useThemeStore((state) => state.setGrayColor)
+  const setNeutrallightColor = useThemeStore((state) => state.setNeutrallightColor)
   const setFont = useThemeStore((state) => state.setFont)
   const setRadius = useThemeStore((state) => state.setRadius)
   const reset = useThemeStore((state) => state.reset)
@@ -68,8 +75,8 @@ export const useTheme = () => {
   }, [accentColor])
 
   useEffect(() => {
-    syncGrayColor(grayColor)
-  }, [grayColor])
+    syncNeutrallightColor(neutrallightColor)
+  }, [neutrallightColor])
 
   useEffect(() => {
     syncFontFamily(font)
@@ -82,19 +89,19 @@ export const useTheme = () => {
   const getConfig = () =>
     baseConfig
       .replace('__ACCENT_COLOR__', accentColor)
-      .replace('__GRAY_COLOR__', grayColor)
+      .replace('__NEUTRALLIGHT_COLOR__', neutrallightColor)
       .replace('__BORDER_RADIUS__', radius)
 
   return {
     accentColor,
     font,
-    grayColor,
+    neutrallightColor,
     radius,
     getConfig,
     reset,
     setAccentColor,
     setFont,
-    setGrayColor,
+    setNeutrallightColor,
     setRadius,
   }
 }
@@ -103,7 +110,7 @@ const syncAccentColor = async (color: AccentColor) => {
   const root = document.querySelector<HTMLHtmlElement>(':root')
   if (!root) return
 
-  const styleStyle = document.querySelector<HTMLStyleElement>('#park-ui-accent')
+  const styleStyle = document.querySelector<HTMLStyleElement>('#agni-ui-accent')
   if (!styleStyle) return
 
   const colorPalette = await loadColorPalette(color)
@@ -111,15 +118,15 @@ const syncAccentColor = async (color: AccentColor) => {
   styleStyle.textContent = cssVariables
 }
 
-const syncGrayColor = async (color: GrayColor) => {
+const syncNeutrallightColor = async (color: NeutrallightColor) => {
   const root = document.querySelector<HTMLHtmlElement>(':root')
   if (!root) return
 
-  const styleStyle = document.querySelector<HTMLStyleElement>('#park-ui-gray')
+  const styleStyle = document.querySelector<HTMLStyleElement>('#agni-ui-neutrallight')
   if (!styleStyle) return
 
   const colorPalette = await loadColorPalette(color)
-  const cssVariables = createVariables(colorPalette).replaceAll(color, 'gray')
+  const cssVariables = createVariables(colorPalette).replaceAll(color, 'neutrallight')
   styleStyle.textContent = cssVariables
 }
 
@@ -181,14 +188,14 @@ const syncBorderRaius = (radius: Radius) => {
 interface State {
   accentColor: AccentColor
   font: Font
-  grayColor: GrayColor
+  neutrallightColor: NeutrallightColor
   radius: Radius
 }
 
 const initialState: State = {
-  accentColor: 'neutral',
+  accentColor: 'brand',
   font: 'Outfit',
-  grayColor: 'neutral',
+  neutrallightColor: 'information',
   radius: 'sm',
 }
 
@@ -196,7 +203,7 @@ interface Actions {
   reset: () => void
   setAccentColor: (color: AccentColor) => void
   setFont: (font: Font) => void
-  setGrayColor: (color: GrayColor) => void
+  setNeutrallightColor: (color: NeutrallightColor) => void
   setRadius: (radius: Radius) => void
 }
 
@@ -207,12 +214,12 @@ const useThemeStore = create<State & Actions>()(
         ...initialState,
         setAccentColor: (accentColor) => set(() => ({ accentColor })),
         setFont: (font) => set(() => ({ font })),
-        setGrayColor: (grayColor) => set(() => ({ grayColor })),
+        setNeutrallightColor: (neutrallightColor) => set(() => ({ neutrallightColor })),
         setRadius: (radius) => set(() => ({ radius })),
         reset: () => set(initialState),
       }),
       {
-        name: 'park-ui-store',
+        name: 'agni-ui-store',
         version: 5,
       },
     ),
@@ -228,7 +235,7 @@ export default defineConfig({
     '@pandacss/preset-base',
     createPreset({
       accentColor: '__ACCENT_COLOR__',
-      grayColor: '__GRAY_COLOR__',
+      neutrallightColor: '__NEUTRALLIGHT_COLOR__',
       borderRadius: '__BORDER_RADIUS__',
     }),
   ],

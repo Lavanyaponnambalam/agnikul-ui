@@ -28,7 +28,7 @@ export const getColorTokens = (props: Props): ColorToken[] => {
   //           .with('fg', () =>
   //             match<string, Token>(token)
   //               .with('disabled', () => 'colors.fg.default')
-  //               .otherwise(() => 'colors.gray.1'),
+  //               .otherwise(() => 'colors.neutrallight.100'),
   //           )
   //           .with('accent', () =>
   //             match<string, Token>(token)
@@ -41,7 +41,7 @@ export const getColorTokens = (props: Props): ColorToken[] => {
 }
 
 // const semanticTokens = createSemanticTokens({
-//   grayColor: 'neutral',
+//   neutrallightColor: 'neutrallight',
 //   accentColor: 'neutral',
 //   borderRadius: 'sm',
 // })

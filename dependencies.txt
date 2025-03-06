@@ -1,0 +1,28 @@
+[1mUsage[0m: [1m[32mbun pm[0m [36m[flags][0m [34m[<command>][0m
+  Run package manager utilities
+
+[1mExamples:[0m
+
+  [1m[32mbun pm[0m [34mpack[0m               create a tarball of the current workspace
+  [2m├[0m [36m--dry-run[0m               do everything except for writing the tarball to disk
+  [2m├[0m [36m--destination[0m           the directory the tarball will be saved in
+  [2m├[0m [36m--filename[0m              the name of the tarball
+  [2m├[0m [36m--ignore-scripts[0m        don't run pre/postpack and prepare scripts
+  [2m└[0m [36m--gzip-level[0m            specify a custom compression level for gzip (0-9, default is 9)
+  [1m[32mbun pm[0m [34mbin[0m                print the path to bin folder
+  [2m└[0m [36m-g[0m                      print the [1mglobal[0m path to bin folder
+  [1m[32mbun pm[0m [34mls[0m                 list the dependency tree according to the current lockfile
+  [2m└[0m [36m--all[0m                   list the entire dependency tree according to the current lockfile
+  [1m[32mbun pm[0m [34mwhoami[0m             print the current npm username
+  [1m[32mbun pm[0m [34mhash[0m               generate & print the hash of the current lockfile
+  [1m[32mbun pm[0m [34mhash-string[0m        print the string used to hash the lockfile
+  [1m[32mbun pm[0m [34mhash-print[0m         print the hash stored in the current lockfile
+  [1m[32mbun pm[0m [34mcache[0m              print the path to the cache folder
+  [1m[32mbun pm[0m [34mcache rm[0m           clear the cache
+  [1m[32mbun pm[0m [34mmigrate[0m            migrate another package manager's lockfile without installing anything
+  [1m[32mbun pm[0m [34muntrusted[0m          print current untrusted dependencies with scripts
+  [1m[32mbun pm[0m [34mtrust[0m [2mnames ...[0m    run scripts for untrusted dependencies and add to `trustedDependencies`
+  [2m└[0m  [36m--all[0m                  trust all untrusted dependencies
+  [1m[32mbun pm[0m [34mdefault-trusted[0m    print the default trusted dependencies list
+
+Learn more about these at [35mhttps://bun.sh/docs/cli/pm[0m

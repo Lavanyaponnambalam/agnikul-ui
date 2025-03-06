@@ -1,19 +1,19 @@
-import { type AccentColor, type GrayColor, grayColors } from '@park-ui/panda-preset'
+import { type AccentColor, type NeutrallightColor, neutrallightColors } from '@park-ui/panda-preset'
 import { Flex, HStack, Stack } from 'styled-system/jsx'
 import { type Token, token } from 'styled-system/tokens'
 import { match } from 'ts-pattern'
 import { Text } from '~/components/ui/text'
 
 interface Props {
-  grayColor: GrayColor
+  neutrallightColor: NeutrallightColor
 }
 
 export const ColorPairings = (props: Props) => {
-  const data = grayColors
-    .filter((grayColor) => grayColor !== 'neutral')
-    .map((grayColor) => ({
-      gray: grayColor,
-      accentcolors: match<GrayColor, AccentColor[]>(grayColor)
+  const data = neutrallightColors
+    .filter((neutrallightColor) => neutrallightColor !== 'neutrallight')
+    .map((neutrallightColor) => ({
+      neutrallight: neutrallightColor,
+      accentcolors: match<NeutrallightColor, AccentColor[]>(neutrallightColor)
         .with('mauve', () => [
           'tomato',
           'red',
@@ -40,12 +40,12 @@ export const ColorPairings = (props: Props) => {
             alignItems="center"
             p="2"
             style={{
-              color: token.var(`colors.${item.gray}.12`),
-              background: token.var(`colors.${item.gray}.6`),
+              color: token.var(`colors.${item.neutrallight}.950`),
+              background: token.var(`colors.${item.neutrallight}.800`),
             }}
           >
             <Text textTransform="capitalize" textStyle="sm">
-              {item.gray}
+              {item.neutrallight}
             </Text>
           </Flex>
           <HStack gap="1" flexWrap="wrap">
@@ -72,7 +72,7 @@ export const ColorPairings = (props: Props) => {
                           'mint',
                           'sky',
                           'yellow',
-                          () => `colors.${item.gray}.light.12`,
+                          () => `colors.${item.neutrallight}.light.12`,
                         )
                         .otherwise(() => 'colors.white'),
                     ),

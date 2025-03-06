@@ -10,7 +10,7 @@ import { useTheme } from '~/lib/use-theme'
 import { AccentColorPicker } from './accent-color-picker'
 import { BorderRadiusSlider } from './border-radius-slider'
 import { FontFamilySelect } from './font-family-select'
-import { GrayColorPicker } from './gray-color-picker'
+import { NeutrallightColorPicker } from './neutrallight-color-picker'
 import { ThemeConfigDialog } from './theme-config-dialog'
 
 interface Props {
@@ -22,10 +22,10 @@ export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
   const {
     setAccentColor,
     setFont,
-    setGrayColor,
+    setNeutrallightColor,
     setRadius,
     accentColor,
-    grayColor,
+    neutrallightColor,
     font,
     radius,
     reset,
@@ -80,14 +80,17 @@ export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
             <Drawer.Body>
               <Stack flex="1" gap="4">
                 <FontFamilySelect font={font} onValueChange={setFont} />
-                <GrayColorPicker grayColor={grayColor} onValueChange={setGrayColor} />
+                <NeutrallightColorPicker
+                  neutrallightColor={neutrallightColor}
+                  onValueChange={setNeutrallightColor}
+                />
                 <AccentColorPicker accentColor={accentColor} onValueChange={setAccentColor} />
                 <BorderRadiusSlider radius={radius} onValueChange={setRadius} />
               </Stack>
             </Drawer.Body>
             <Drawer.Footer>
               <HStack gap="3">
-                <Button variant="outline" colorPalette="gray" onClick={reset}>
+                <Button variant="outline" colorPalette="neutrallight" onClick={reset}>
                   <Undo2Icon />
                   Reset
                 </Button>

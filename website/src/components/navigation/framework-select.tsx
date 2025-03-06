@@ -9,11 +9,7 @@ export const FrameworkSelect = () => {
   const params = useParams<{ framework: string }>()
   const pathname = usePathname()
   const collection = createListCollection({
-    items: [
-      { label: 'React', value: 'react' },
-      { label: 'Solid', value: 'solid' },
-      { label: 'Vue', value: 'vue' },
-    ],
+    items: [{ label: 'React', value: 'react' }],
   })
 
   return (

@@ -8,7 +8,7 @@ description: All notable changes will be documented in this file.
 
 ### Removed
 
-- **Breaking**: The Park UI Preset no longer includes component recipes. From now on, recipes will be added to your project when you install a component via the CLI, giving you full flexibility to customize them as needed. To migrate, simply reinstall your components using the CLI.
+- **Breaking**: The AGNI UI Preset no longer includes component recipes. From now on, recipes will be added to your project when you install a component via the CLI, giving you full flexibility to customize them as needed. To migrate, simply reinstall your components using the CLI.
 
 Afterward, update your `panda.config.ts` as follows:
 
@@ -69,7 +69,7 @@ Here's how this change impacts usage:
 + <Box color="colorPalette.default" />
 ```
 
-- Improved consistency and scalability by refining the Park UI Preset setup in the Panda
+- Improved consistency and scalability by refining the AGNI UI Preset setup in the Panda
   configuration. [Learn more in the docs](https://park-ui.com/react/docs/theme/customize).
 
 ````diff

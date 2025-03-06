@@ -10,7 +10,7 @@ export default async function Page() {
     <Container py={{ base: '16', md: '24' }} maxW="7xl">
       <Stack gap={{ base: '16', md: '24' }} alignItems="center">
         <PageHeader
-          heading="Park UI Plus"
+          heading="AGNI UI Plus"
           subHeading="Pricing"
           description="Unlock exclusive blocks and support the development of Park UI."
         />
@@ -26,7 +26,7 @@ export default async function Page() {
 }
 
 export const metadata: Metadata = {
-  title: 'Park UI Plus',
+  title: 'AGNI UI Plus',
   description: 'Unlock exclusive blocks and support the development of Park UI.',
 }
 

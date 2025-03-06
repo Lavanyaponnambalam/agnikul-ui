@@ -34,7 +34,7 @@ export default async function Page(props: Props) {
         <Stack gap="16" px={{ base: '0', xl: '8' }} width="full">
           <Prose css={{ maxWidth: '45rem', mx: 'auto', width: '100%' }}>
             <Heading as="h1" fontWeight="bold">
-              {currentPage.id === 'introduction' ? 'Welcome to Park UI' : currentPage.title}
+              {currentPage.id === 'introduction' ? 'Welcome to AGNI UI' : currentPage.title}
             </Heading>
             <Text className="lead" color="fg.muted" mb="6">
               {currentPage.id === 'introduction'

@@ -11,7 +11,7 @@ const Payload = Schema.Struct({
     id: Schema.String,
     attributes: Schema.Struct({
       first_order_item: Schema.Struct({
-        product_name: Schema.Literal('Park UI Plus'),
+        product_name: Schema.Literal('AGNI UI Plus'),
         variant_name: Schema.Literal('Personal', 'Team'),
       }),
     }),

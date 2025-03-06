@@ -4,7 +4,7 @@ import { Text } from '~/components/ui/text'
 export const ShadowTokens = () => {
   return (
     <Grid gap="4" columns={{ base: 2, sm: 4 }} className="not-prose">
-      {['xs', 'sm', 'md', 'lg', 'xl', '2xl'].map((shadow) => (
+      {['xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'].map((shadow) => (
         <Flex
           key={shadow}
           borderRadius="l3"

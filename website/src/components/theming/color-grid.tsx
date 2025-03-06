@@ -1,17 +1,17 @@
-import { accentColors, grayColors } from '@park-ui/panda-preset'
+import { accentColors, neutrallightColors } from '@park-ui/panda-preset'
 import { Stack } from 'styled-system/jsx'
 import { match } from 'ts-pattern'
 import { Text } from '~/components/ui/text'
 import { ColorPalette } from './color-palette'
 
 interface Props {
-  type: 'gray' | 'accent'
+  type: 'neutrallight' | 'accent'
 }
 
 export const ColorGrid = (props: Props) => {
   const { type } = props
   const colors = match(type)
-    .with('gray', () => grayColors)
+    .with('neutrallight', () => neutrallightColors)
     .with('accent', () => accentColors)
     .exhaustive()
 

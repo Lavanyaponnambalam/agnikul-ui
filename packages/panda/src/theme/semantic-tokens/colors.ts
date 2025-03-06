@@ -2,26 +2,43 @@ import { defineSemanticTokens } from '@pandacss/dev'
 
 export const colors = defineSemanticTokens.colors({
   bg: {
-    canvas: { value: { _light: '{colors.gray.1}', _dark: '{colors.gray.1}' } },
-    default: { value: { _light: 'white', _dark: '{colors.gray.2}' } },
-    subtle: { value: { _light: '{colors.gray.2}', _dark: '{colors.gray.3}' } },
-    muted: { value: { _light: '{colors.gray.3}', _dark: '{colors.gray.4}' } },
-    emphasized: { value: { _light: '{colors.gray.4}', _dark: '{colors.gray.5}' } },
-    disabled: { value: { _light: '{colors.gray.5}', _dark: '{colors.gray.6}' } },
+    'soft-surface': {
+      value: { _light: '{colors.neutrallight.light.25}', _dark: '{colors.neutrallight.dark.900}' },
+    },
+    default: {
+      value: { _light: '{colors.neutrallight.light.200}', _dark: '{colors.neutrallight.dark.500}' },
+    },
+    subtle: {
+      value: { _light: '{colors.neutrallight.light.50}', _dark: '{colors.neutrallight.dark.800}' },
+    },
+    muted: {
+      value: { _light: '{colors.neutrallight.light.300}', _dark: '{colors.neutrallight.dark.500}' },
+    },
+    emphasized: {
+      value: { _light: '{colors.neutrallight.light.600}', _dark: '{colors.neutrallight.dark.600}' },
+    },
   },
   fg: {
-    default: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.12}' } },
-    muted: { value: { _light: '{colors.gray.11}', _dark: '{colors.gray.11}' } },
-    subtle: { value: { _light: '{colors.gray.10}', _dark: '{colors.gray.10}' } },
-    disabled: { value: { _light: '{colors.gray.9}', _dark: '{colors.gray.9}' } },
-    error: { value: { _light: '{colors.red.9}', _dark: '{colors.red.9}' } },
+    primary: {
+      value: { _light: '{colors.neutrallight.light.500}', _dark: '{colors.neutrallight.dark.500}' },
+    },
+    secondary: {
+      value: { _light: '{colors.neutrallight.light.500}', _dark: '{colors.neutrallight.dark.500}' },
+    },
+    tertiary: {
+      value: { _light: '{colors.neutrallight.light.100}', _dark: '{colors.neutrallight.dark.800}' },
+    },
   },
+
   border: {
-    default: { value: { _light: '{colors.gray.7}', _dark: '{colors.gray.7}' } },
-    muted: { value: { _light: '{colors.gray.6}', _dark: '{colors.gray.6}' } },
-    subtle: { value: { _light: '{colors.gray.4}', _dark: '{colors.gray.4}' } },
-    disabled: { value: { _light: '{colors.gray.5}', _dark: '{colors.gray.5}' } },
-    outline: { value: { _light: '{colors.gray.a9}', _dark: '{colors.gray.a9}' } },
-    error: { value: { _light: '{colors.red.9}', _dark: '{colors.red.9}' } },
+    xsubtle: {
+      value: { _light: '{colors.neutrallight.light.50}', _dark: '{colors.neutrallight.dark.800}' },
+    },
+    subtle: {
+      value: { _light: '{colors.neutrallight.light.100}', _dark: '{colors.neutrallight.dark.700}' },
+    },
+    default: {
+      value: { _light: '{colors.neutrallight.light.500}', _dark: '{colors.neutrallight.dark.100}' },
+    },
   },
 })

@@ -2,8 +2,8 @@ import type { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Park UI',
-    short_name: 'Park UI',
+    name: 'AGNI UI',
+    short_name: 'AGNI UI',
     description:
       'Beautifully designed components built with Ark UI and Panda CSS that work with avariety of JS frameworks.',
     start_url: '/',
